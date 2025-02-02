@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import {
   FaGithub,
   FaLinkedin,
@@ -16,8 +17,35 @@ import {
   SiExpress,
 } from "react-icons/si";
 import "./App.css";
+import { useState } from "react";
 
 const App = () => {
+  const [content, setcontent] = useState({
+    username: "",
+    email: "",
+    message: "",
+  });
+
+  function handlechange(event) {
+    let fieldName = event.target.name;
+    let valuename = event.target.value;
+    console.log(fieldName);
+    console.log(valuename);
+    setcontent((currData) => {
+      currData[fieldName] = valuename;
+      return { ...currData };
+    });
+  }
+
+  function handleSubmit(evt) {
+    console.log(content);
+    evt.preventDefault();
+    setcontent({
+      username: "",
+      email: "",
+      message: "",
+    });
+  }
   return (
     <div className="container">
       {/* Navigation */}
@@ -161,6 +189,7 @@ const App = () => {
       </section>
 
       {/* Contact Section */}
+
       <section id="contact" className="section">
         <h2 className="section-title">Get in Touch</h2>
 
@@ -182,10 +211,28 @@ const App = () => {
             </div>
           </div>
 
-          <form className="contact-form">
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <textarea placeholder="Message" rows="5"></textarea>
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Name"
+              name="username"
+              value={content.username}
+              onChange={handlechange}
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={content.email}
+              onChange={handlechange}
+            />
+            <textarea
+              placeholder="Message"
+              rows="5"
+              name="message"
+              value={content.message}
+              onChange={handlechange}
+            ></textarea>
             <button type="submit" className="btn primary">
               Send Message
             </button>
