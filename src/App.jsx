@@ -78,7 +78,7 @@ const App = () => {
             <a href="#contact" className="btn primary">
               Hire Me
             </a>
-            <a href="/documents/resume.pdf" download className="btn secondary">
+            <a href="documents/resume.pdf" download className="btn secondary">
               <FaFileDownload /> Resume
             </a>
           </div>
@@ -144,7 +144,7 @@ const App = () => {
           <div className="skill-item">
             <FaReact className="skill-icon" />
             <h3>React</h3>
-            <p>2+ years experience</p>
+            <p>Frentend Framework</p>
           </div>
           <div className="skill-item">
             <SiJavascript className="skill-icon" />
