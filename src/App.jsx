@@ -94,7 +94,7 @@ const App = () => {
             whileHover={{ scale: 1.05 }}
             className="project-card"
           >
-            <a href="https://delta-project-drw4.onrender.com">
+            <a href="https://delta-project-drw4.onrender.com/listings">
               <div className="project-image project-1"></div>
             </a>
 
